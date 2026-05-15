@@ -3,6 +3,7 @@ import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:zied_zhiri_adora_hiring_assignment/core/services/notification_service.dart';
 
+// Runs in a separate background isolate
 @pragma('vm:entry-point')
 void onStart(ServiceInstance service) async {
   Timer? timer;
@@ -55,13 +56,14 @@ class BackgroundService {
   Future<void> initializeService() async {
     await service.configure(
       iosConfiguration: IosConfiguration(
-        autoStart: false, //only start from button press, not on app launch
+        autoStart: false, //Only start from button press, not on app launch
         onForeground: onStart,
         onBackground: onIosBackground,
       ),
       androidConfiguration: AndroidConfiguration(
         autoStart: false,
         onStart: onStart,
+        // Foreground service required for persistent background tracking on Android
         isForegroundMode: true,
         autoStartOnBoot: false,
       ),
