@@ -1,19 +1,30 @@
-# zied_zhiri_adora_hiring_assignment
+# Flutter Location Tracking Assignment
+## Overview
 
-## Flutter 3.27.4
-## Tools • Dart 3.6.2 • DevTools 2.40.3
+This Flutter application demonstrates real-time device location tracking in foreground and background states.
 
-### Location tracking is implemented using an Android foreground service which continues execution even when the app is removed from recent apps. This ensures continuous location updates without requiring the UI process to remain active.
+## The project includes:
+- Runtime location permission handling
+- Foreground location retrieval
+- Background location tracking using an Android foreground service
+- Persistent notification updates with live coordinates
+- Simple UI for enabling/disabling tracking
+- 
+## Technical Details
+- Flutter 3.27.4
+- Dart 3.6.2
 
-## Getting Started
+# Main Packages Used
+- geolocator
+- flutter_background_service
+- flutter_local_notifications
 
-This project is a starting point for a Flutter application.
+## Background Tracking
 
-A few resources to get you started if this is your first Flutter project:
+Location tracking is implemented using an Android foreground service which continues execution even when the app is removed from recent apps. This allows continuous location updates without requiring the UI process to remain active.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Location updates are retrieved every 10 seconds and displayed through a persistent notification.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Notes
+
+Due to iOS system limitations, continuous background tracking behavior may differ from Android.
