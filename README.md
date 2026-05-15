@@ -9,7 +9,7 @@ This Flutter application demonstrates real-time device location tracking in fore
 - Background location tracking using an Android foreground service
 - Persistent notification updates with live coordinates
 - Simple UI for enabling/disabling tracking
-- 
+
 ## Technical Details
 - Flutter 3.27.4
 - Dart 3.6.2
